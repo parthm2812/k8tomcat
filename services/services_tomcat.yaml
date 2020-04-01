@@ -1,0 +1,18 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: phm-tomcat
+  namespace: pmewada
+  labels:
+    app: phm-tomcat
+spec:
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: phm-tomcat
+  type: ClusterIP
+  sessionAffinity: None
+  

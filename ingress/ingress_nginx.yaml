@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: phm-ingress
+  namespace: pmewada
+  labels:
+    name: pmewada-dev
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: phm-tomcat
+              servicePort: 8080
